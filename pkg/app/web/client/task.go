@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/gihyodocker/taskapp/pkg/model"
-	"github.com/gihyodocker/taskapp/pkg/payload"
+	"github.com/jpubdocker/taskapp/pkg/model"
+	"github.com/jpubdocker/taskapp/pkg/payload"
 )
 
 type TaskClient interface {
