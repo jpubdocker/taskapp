@@ -36,14 +36,14 @@ jobs:
           context: ./containers/mysql
           push: true
           platforms: linux/amd64,linux/arm64
-          tags: ${{ env.CONTAINER_REGISTRY }}/${{ github.repository }}-mysql:${{ env.IMAGE_VERSION }}
+          tags: ${{ env.CONTAINER_REGISTRY }}/${{ github.repository }}-mysql:v0.1.0
       - name: Build and push migrator
         uses: docker/build-push-action@v5
         with:
           context: ./containers/migrator
           push: true
           platforms: linux/amd64,linux/arm64
-          tags: ${{ env.CONTAINER_REGISTRY }}/${{ github.repository }}-migrator:${{ env.IMAGE_VERSION }}
+          tags: ${{ env.CONTAINER_REGISTRY }}/${{ github.repository }}-migrator::v0.1.0
       - name: Build and push api
         uses: docker/build-push-action@v5
         with:
@@ -51,7 +51,7 @@ jobs:
           file: ./containers/api/Dockerfile
           push: true
           platforms: linux/amd64,linux/arm64
-          tags: ${{ env.CONTAINER_REGISTRY }}/${{ github.repository }}-api:${{ env.IMAGE_VERSION }}
+          tags: ${{ env.CONTAINER_REGISTRY }}/${{ github.repository }}-api::v0.1.0
       - name: Slim build and push api
         uses: docker/build-push-action@v5
         with:
@@ -59,7 +59,7 @@ jobs:
           file: ./containers/api/Dockerfile.slim
           push: true
           platforms: linux/amd64,linux/arm64
-          tags: ${{ env.CONTAINER_REGISTRY }}/${{ github.repository }}-api:${{ env.IMAGE_VERSION }}-slim
+          tags: ${{ env.CONTAINER_REGISTRY }}/${{ github.repository }}-api::v0.1.0
       - name: Build and push web
         uses: docker/build-push-action@v5
         with:
@@ -67,7 +67,7 @@ jobs:
           file: ./containers/web/Dockerfile
           push: true
           platforms: linux/amd64,linux/arm64
-          tags: ${{ env.CONTAINER_REGISTRY }}/${{ github.repository }}-web:${{ env.IMAGE_VERSION }}
+          tags: ${{ env.CONTAINER_REGISTRY }}/${{ github.repository }}-web::v0.1.0
       - name: Slim build and push web
         uses: docker/build-push-action@v5
         with:
@@ -75,14 +75,14 @@ jobs:
           file: ./containers/web/Dockerfile.slim
           push: true
           platforms: linux/amd64,linux/arm64
-          tags: ${{ env.CONTAINER_REGISTRY }}/${{ github.repository }}-web:${{ env.IMAGE_VERSION }}-slim
+          tags: ${{ env.CONTAINER_REGISTRY }}/${{ github.repository }}-web::v0.1.0
       - name: Build and push nginx-api
         uses: docker/build-push-action@v5
         with:
           context: ./containers/nginx-api
           push: true
           platforms: linux/amd64,linux/arm64
-          tags: ${{ env.CONTAINER_REGISTRY }}/${{ github.repository }}-nginx-api:${{ env.IMAGE_VERSION }}
+          tags: ${{ env.CONTAINER_REGISTRY }}/${{ github.repository }}-nginx-api::v0.1.0
       - name: Build and push nginx-web
         uses: docker/build-push-action@v5
         with:
