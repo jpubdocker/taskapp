@@ -89,4 +89,4 @@ jobs:
           context: ./containers/nginx-web
           push: true
           platforms: linux/amd64,linux/arm64
-          tags: ${{ env.CONTAINER_REGISTRY }}/${{ github.repository }}-nginx-web:${{ env.IMAGE_VERSION }}
+          tags: ${{ env.CONTAINER_REGISTRY }}/${{ github.repository }}-nginx-web:v0.1.0
