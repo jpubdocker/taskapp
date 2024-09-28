@@ -18,7 +18,7 @@ spec:
       terminationGracePeriodSeconds: 10
       containers:
         - name: mysql
-          image: ghcr.io/jpubdocker/taskapp-mysql:553c3d3
+          image: ghcr.io/jpubdocker/taskapp-mysql
           env:
             - name: MYSQL_ROOT_PASSWORD_FILE
               value: /var/run/secrets/mysql/root_password
